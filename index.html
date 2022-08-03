@@ -33,8 +33,9 @@
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p class="lead">Your Hourly Scheduler</p>
       <p id="currentDay" class="lead"></p>
+      <p id="currentTime" class="lead"></p>
     </header>
     <div class="container">
       <!-- Timeblocks from 9am to 5pm -->
@@ -57,7 +58,7 @@
       </div>
 
       <div class="row time-block" id="12">
-        <div class="col-1 hour pt-2" value="12PM">12:00</div>
+        <div class="col-1 hour pt-2" value="12:00">12:00</div>
         <textarea class="col-10 plan"></textarea>
         <button class="col-1 saveBtn"><i class="fas fa-save"></i></button>
       </div>
@@ -95,6 +96,8 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.4/dayjs.min.js" integrity="sha512-Ot7ArUEhJDU0cwoBNNnWe487kjL5wAOsIYig8llY/l0P2TUFwgsAHVmrZMHsT8NGo+HwkjTJsNErS6QqIkBxDw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
