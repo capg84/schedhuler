@@ -15,7 +15,7 @@ setInterval(currentTime, 1000);
 
 // each time block is color-coded to indicate whether it is in the past, present, or future
 function timeBlockColor() {
-    var hour = dayjs().$H - 6;
+    var hour = dayjs().$H;
 
     $(".time-block").each(function() {
         var currHour = parseInt($(this).attr("id"));
