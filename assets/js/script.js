@@ -6,8 +6,8 @@ $("#currentDay").text(dayjs().format('DD MMMM YYYY'));
 // display the current time
 function currentTime() {
     var now = dayjs().format('HH:mm:ss');
-    now = dayjs().format('HH:mm:ss');
     document.getElementById('currentTime').innerText = "Current time: " + now;
+    now = dayjs().format('HH:mm:ss');
 }
 setInterval(currentTime, 1000);
 
@@ -33,24 +33,19 @@ function timeBlockColor() {
 // WHEN I click the save button for that time block
 saveButton.on("click", function() {
 
-    // console.log(this); //save button
     var time = $(this).siblings(".hour").text();
     var plan = $(this).siblings(".plan").val();
 
-    // THEN the text for that event is saved in local storage
+    // The task is saved in local storage
     localStorage.setItem(time, plan);
 });
 
-// WHEN I refresh the page
-// THEN the saved events persist
-function usePlanner() {
+// When the page is refreshed, the saved tasks persist
+function saveTask() {
 
     $(".hour").each(function() {
         var currHour = $(this).text();
         var currPlan = localStorage.getItem(currHour);
-
-        // console.log(this);
-        // console.log(currHour);
 
         if(currPlan !== null) {
             $(this).siblings(".plan").val(currPlan);
@@ -60,4 +55,4 @@ function usePlanner() {
 
 // calling the functions
 timeBlockColor();
-usePlanner();
+saveTask();
