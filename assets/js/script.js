@@ -1,9 +1,11 @@
 var saveButton = $(".saveBtn");
+var now1 = dayjs().format('HH:mm:ss');
 
-// display the current date
+// display the current date and time
 $("#currentDay").text(dayjs().format('DD MMMM YYYY'));
+$("#currentTime").text("Current time: " + now1);
 
-// display the current time
+// refresh the current time after every second
 function currentTime() {
     var now = dayjs().format('HH:mm:ss');
     document.getElementById('currentTime').innerText = "Current time: " + now;
@@ -13,12 +15,10 @@ setInterval(currentTime, 1000);
 
 // each time block is color-coded to indicate whether it is in the past, present, or future
 function timeBlockColor() {
-    var hour = dayjs().$H;
+    var hour = dayjs().$H - 6;
 
     $(".time-block").each(function() {
         var currHour = parseInt($(this).attr("id"));
-
-        // console.log(this); //each time-block
 
         if (currHour > hour) {
             $(this).addClass("future");
